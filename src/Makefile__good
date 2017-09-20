@@ -1,0 +1,11 @@
+
+oid_pen:
+	gcc -g main.c msg_manage.c oid_msg.c Thread.c \
+	bear_audio_decode_task.c \
+	wav_decode.c \
+	bear_audio_dac_task.c \
+	bear_block.c \
+	-lpthread -lasound -o oid_pen
+
+clean:
+	rm oid_pen

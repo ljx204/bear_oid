@@ -1,0 +1,25 @@
+LIB_MAD = ./libmad
+OID_SRC = ./src
+
+OID_OBJ = ./obj
+
+SRC1 = $(wildcard ${OID_SRC}/*.c)
+SRC2 = $(wildcard $(LIB_MAD)/*.c)
+
+OBJ1 = $(patsubst %.c, ${OID_OBJ}/%.o, $(notdir $(SRC1)))
+
+TARGET = oid_pen
+
+CC = gcc
+
+LFLAGS = -lpthread -lasound
+
+${TARGER}:${OID_OBJ}
+	$(CC) $(OID_OBJ) -o $@
+
+${OID_OBJ}/%.o:${OID_SRC}/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
+
+
