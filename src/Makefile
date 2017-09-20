@@ -27,7 +27,7 @@ TARGET = bear
 
 TARGET1 = app_suer
 
-CC = gcc
+#CC = gcc
 
 LFLAGS = -lpthread -lasound -lmad -lid3tag -lz -lmp3lame
 
